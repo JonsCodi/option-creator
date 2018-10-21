@@ -1,0 +1,22 @@
+<section id="oc-create" class="aui-dialog2 aui-dialog2-medium aui-layer" role="dialog"
+         aria-hidden="true">
+    <header class="aui-dialog2-header">
+        <h2 class="aui-dialog2-header-main" id="apj-modal-title">$a.o("operation.create.title") $a.f("group")</h2>
+        <a class="aui-dialog2-header-close">
+            <span class="aui-icon aui-icon-small aui-iconfont-close-dialog"> $a.o("operation.close.title")</span>
+        </a>
+    </header>
+    <div class="aui-dialog2-content">
+        #parse("/vm/dialog/form/oc_create.vm")
+    </div>
+    <footer class="aui-dialog2-footer">
+        <div class="aui-dialog2-footer-actions">
+            <button id="dialog-submit-button-scheme" class="aui-button aui-button-primary" onclick="">
+                $a.o("operation.save.title")
+            </button>
+            <button id="dialog-cancel-button" class="aui-button aui-button-link" onclick="hideDialogOC()">
+                $a.o("operation.close.title")
+            </button>
+        </div>
+    </footer>
+</section>

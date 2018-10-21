@@ -1,0 +1,83 @@
+#* @vtlvariable name="action" type="br.com.tetrabit.jira.plugins.oc.action.OptionCreatorAction" *#
+#set ($a = $action)
+<form class="aui top-label">
+    <div class="form-body">
+        <fieldset class="top-label">
+            <div class="field-group top-label">
+                <label for="group-name">$a.f("grupo")<span class="aui-icon icon-required">required</span></label>
+                <input class="text" id="group-name" name="group-name" type="text" value="">
+                <div class="description"><span class="aui-icon aui-icon-medium aui-iconfont-appswitcher"></span>
+                    $a.f("grupo.description")
+                </div>
+                <div class="error" id="name_error"></div>
+            </div>
+            <div class="field-group top-label">
+                <label for="custom-fields">$a.f("custom-fields")<span class="aui-icon icon-required">required</span></label>
+                <select id="select2-example" multiple="">
+                    <option value="CONF">Confluence</option>
+                    <option value="JIRA">JIRA</option>
+                    <option value="BAM">Bamboo</option>
+                    <option value="JAG">JIRA Agile</option>
+                    <option value="CAP">JIRA Capture</option>
+                    <option value="AUI">AUI</option>
+                </select>
+                <div class="description"><span class="aui-icon aui-icon-medium aui-iconfont-appswitcher"></span>
+                    $a.f("custom-fields.description")
+                </div>
+                <div class="error" id="name_error"></div>
+            </div>
+        </fieldset><!--
+        <div class="field-group">
+            <label for="page-group"><span class="aui-icon icon-required">required</span>$a.f("pagegroup")</label>
+            <input class="text long-field" id="page-group" name="page-group" type="text" value="">
+            <div class="description"><span class="aui-icon aui-icon-medium aui-iconfont-appswitcher"></span>
+                $a.f("pagegroup.description")
+            </div>
+            <div class="error" id="page-group_error"></div>
+        </div>
+        <div class="field-group">
+            <label for="page-regex"><span class="aui-icon icon-required">required</span>$a.f("pageregex")</label>
+            <textarea id="page-regex" placeholder=".*/url/url"
+                      name="page-regex" rows="6" cols="50" type="text" value=""></textarea>
+            <div class="description"><span class="aui-icon aui-icon-medium
+            aui-iconfont-appswitcher"></span>
+                $a.f("pageregex.description")
+            </div>
+            <div class="error" id="page-regex_error"></div>
+        </div>
+        <div class="field-group">
+            <label for="rule"><span class="aui-icon icon-required">required</span>$a.f("rule")</label>
+            <select class="select cf-select" id="rule" name="rule">
+                <option value="true">$a.o("operation.granted.title")</option>
+                <option value="false">$a.o("operation.denied.title")</option>
+                <option value="none" selected>$a.o("operation.none.title")</option>
+            </select>
+            <div class="description">$a.f("rule.description")</div>
+            <div class="error" id="rule_error"></div>
+
+        </div>
+        <div class="field-group">
+            <label for="operations"><span class="aui-icon icon-required">required</span>$a.f("operations")</label>
+            <input type="checkbox" name="GET" value="GET" id="operations">GET<br>
+            <input type="checkbox" name="POST" value="POST" id="operations">POST<br>
+            <input type="checkbox" name="PUT" value="PUT" id="operations">PUT<br>
+            <input type="checkbox" name="DELETE" value="DELETE" id="operations">DELETE<br>
+            <div class="description"><span class="aui-icon aui-icon-medium aui-iconfont-appswitcher"></span>
+                $a.f("operations.description")
+            </div>
+            <div class="error" id="operations_error"></div>
+        </div>
+        <div class="field-group">
+            <label for="status"><span class="aui-icon icon-required">required</span>$a.f("status")</label>
+            <select class="select cf-select" id="status" name="status">
+                <option value="true">$a.o("operation.enable.title")</option>
+                <option value="false">$a.o("operation.disable.title")</option>
+                <option value="none" selected>$a.o("operation.none.title")</option>
+            </select>
+            <div class="description">
+                $a.f("status.description")
+            </div>
+            <div class="error" id="status_error"></div>
+        </div> -->
+    </div>
+</form>

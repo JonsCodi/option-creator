@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="messages"/>
+    <!-- add our web resources -->
+    <web-resource key="option-creator-resources" name="option-creator Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <dependency>com.atlassian.auiplugin:aui-select2</dependency>
+        <resource type="download" name="option-creator.css" location="/css/option-creator.css"/>
+        <resource type="download" name="option-creator.js" location="/js/option-creator.js"/>
+        <resource type="download" name="images/" location="/images"/>
+        <context>option-creator</context>
+    </web-resource>
+    <web-section i18n-name-key="option-creator.section.name" key="option-creator" location="admin_plugins_menu" weight="2000">
+        <description key="option-creator.section.description"/>
+        <label key="option-creator.section.label"/>
+        <tooltip key="opt-creator.tooltip"/>
+    </web-section>
+    <web-item i18n-name-key="option-creator.item.name" key="option-creator.item" section="admin_plugins_menu/option-creator" weight="2000">
+        <description key="option-creator.item.description">The Option Creator for JIRA Addon</description>
+        <label key="option-creator.item.label"/>
+        <link linkId="option-creator-link">/secure/option-creator-configuration.jspa</link>
+    </web-item>
+    <webwork1 key="option-creator-action" name="Option Creator Action" i18n-name-key="option-creator.action.name">
+        <description key="option-creator.action.description">The Option Creator for JIRA Action Addon</description>
+        <actions>
+            <action name="br.com.tetrabit.jira.plugins.oc.action.OptionCreatorAction" alias="option-creator-configuration">
+                <view name="success">/vm/admin/configuration.vm</view>
+            </action>
+        </actions>
+    </webwork1>
+    <rest name="oc-rest" i18n-name-key="option-creator.rest.name" key="oc-rest" path="/oc" version="1.0">
+        <description key="option-creator.rest.description"/>
+    </rest>
+    <component-import key="activeObjects" interface="com.atlassian.activeobjects.external.ActiveObjects">
+        <description>Component to access Active Objects functionality from the plugin</description>
+    </component-import>
+    <component-import key="i18nResolver" interface="com.atlassian.sal.api.message.I18nResolver"/>
+</atlassian-plugin>

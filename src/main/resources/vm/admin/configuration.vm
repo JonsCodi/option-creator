@@ -1,0 +1,28 @@
+#* @vtlvariable name="webResourceManager" type="com.atlassian.plugin.webresource.WebResourceManager" *#
+#* @vtlvariable name="action" type="br.com.tetrabit.jira.plugins.oc.action.OptionCreatorAction" *#
+#set ($a = $action)
+<html>
+<head>
+    ${webResourceManager.requireResourcesForContext("option-creator")}
+    <title>$a.h("title")</title>
+    <meta name="decorator" content="atl.admin"/>
+</head>
+<body>
+<h2>$a.h("title")</h2>
+<div>
+    <br>
+    <p>
+        <span class="aui-icon aui-icon-small aui-iconfont-info">Info</span>
+        $a.h("description")
+    </p>
+    <br>
+    <p>
+        <button style="float:  right;" class="aui-button aui-button-primary aui-style"
+                onclick="openDialogOC()">
+            $a.o("operation.add.title") $a.f("group")
+        </button>
+    </p>
+</div>
+    #parse("/vm/dialog/oc_create.vm")
+</body>
+</html>
